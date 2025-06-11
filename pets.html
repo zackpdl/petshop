@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Pets - Pawsome Pet Store</title>
+  <link rel="stylesheet" href="common.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Pawsome Pet Store</h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pets.html">Available Pets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="pets" class="pets-section">
+      <h2>All Pets</h2>
+      <div id="pet-list" class="pet-list"></div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-content">
+        <h3>Contact Us</h3>
+        <p>Email: u6611140@au.edu</p>
+        <p>Phone: (66) 123-4567</p>
+        <p>Address: ABAC, Bang Bo, Thailand</p>
+      </div>
+  </footer>
+
+  <script>
+    const pets = [
+      { "name": "Buddy", "type": "Dog", "age": 3, "img": "img/dogs/dog01.jpg" },
+      { "name": "Max", "type": "Dog", "age": 2, "img": "img/dogs/dog02.jpg" },
+      { "name": "Whiskers", "type": "Cat", "age": 2, "img": "img/cats/cat01.jpg" },
+      { "name": "Mittens", "type": "Cat", "age": 1.5, "img": "img/cats/cat02.jpg" },
+    ];
+
+    function adoptPet(name) {
+      alert(`Thank you for choosing to adopt ${name}! Our team will contact you soon.`);
+    }
+
+    function loadPets() {
+      const petList = document.getElementById("pet-list");
+      pets.forEach(pet => {
+        const petItem = document.createElement("div");
+        petItem.className = "pet-card";
+        petItem.innerHTML = `
+          <img src="${pet.img}" alt="${pet.name}" />
+          <h3>${pet.name}</h3>
+          <p>Type: ${pet.type}</p>
+          <p>Age: ${pet.age} years</p>
+          <button onclick="adoptPet('${pet.name}')">Adopt Now</button>
+        `;
+        petList.appendChild(petItem);
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadPets);
+  </script>
+</body>
+</html>
