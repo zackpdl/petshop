@@ -1,109 +1,179 @@
+/* Reset and base */
 * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-}
-
-.navbar {
+    text-align: center;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  /* Header and Navigation */
+  header {
+    background-color: #4CAF50;
+    padding: 20px 0;
+    color: white;
+  }
+  
+  .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background-color: #f8f9fa;
-}
-
-.logo {
-    color: #333;
-    font-size: 1.5rem;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #007bff;
-}
-
-.hero {
-    height: 60vh;
-    background-image: url('img/jumbotron.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-.hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2rem;
-    border-radius: 10px;
-}
-
-.pets-section {
-    padding: 4rem 5%;
-}
-
-.pet-carousel {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    padding: 2rem 0;
-}
-
-.pet-card {
-    flex: 0 0 300px;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.pet-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.adopt-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
-}
-
-.adopt-btn:hover {
-    background-color: #0056b3;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 2rem 5%;
-}
-
-.footer-content {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
-}
+    padding: 0 20px;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-left: 25px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #c1e1c1;
+  }
+  
+  /* Main content - general section styling */
+  main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+  
+  /* Section headings */
+  h1, h2, h3 {
+    margin-bottom: 15px;
+  }
+  
+  /* Pet list container */
+  .pet-list,
+  .pet-carousel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Each pet card */
+  .pet-card,
+  .pet {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+    background-color: #fafafa;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .pet-card:hover,
+  .pet:hover {
+    box-shadow: 0 5px 15px rgb(0 0 0 / 0.2);
+  }
+  
+  /* Pet images */
+  .pet-card img,
+  .pet img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Pet info text */
+  .pet-card h3,
+  .pet p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: #008CBA;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #005f7a;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #4CAF50;
+    color: white;
+    padding: 25px 20px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .footer-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+  
+  .footer-content p {
+    margin: 3px 0;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  
+    .nav-links li {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  
+    .pet-list,
+    .pet-carousel {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pet-card,
+    .pet {
+      width: 90%;
+    }
+  }
+  
