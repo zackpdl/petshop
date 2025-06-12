@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>All Pets - Pawsome Pet Store</title>
+  <title>All Pets - Zack's Pet Store</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -31,17 +31,26 @@
         <p>Email: u6611140@au.edu</p>
         <p>Phone: (66) 123-4567</p>
         <p>Address: ABAC, Bang Bo, Thailand</p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62044.121249418895!2d100.76169884863279!3d13.61161269999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d430e775155f9%3A0xf01923824353260!2sAssumption%20University%20Suvarnabhumi%20Campus!5e0!3m2!1sen!2sth!4v1749631449432!5m2!1sen!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62044.121249418895!2d100.76169884863279!3d13.61161269999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d430e775155f9%3A0xf01923824353260!2sAssumption%20University%20Suvarnabhumi%20Campus!5e0!3m2!1sen!2sth!4v1749631449432!5m2!1sen!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
   </footer>
 
   <script>
-    const pets = [
-      { "name": "Buddy", "type": "Dog", "age": 3, "img": "img/dogs/dog01.jpg" },
-      { "name": "Max", "type": "Dog", "age": 2, "img": "img/dogs/dog02.jpg" },
-      { "name": "Whiskers", "type": "Cat", "age": 2, "img": "img/cats/cat01.jpg" },
-      { "name": "Mittens", "type": "Cat", "age": 1.5, "img": "img/cats/cat02.jpg" },
-    ];
+const pets = [
+  { name: "Buddy", type: "Dog", age: 3, img: "img/dogs/dog01.jpg" },
+  { name: "Max", type: "Dog", age: 2, img: "img/dogs/dog02.jpg" },
+  { name: "Charlie", type: "Dog", age: 4, img: "img/dogs/dog03.jpg" },
+  { name: "Whiskers", type: "Cat", age: 2, img: "img/cats/cat01.jpg" },
+  { name: "Mittens", type: "Cat", age: 1.5, img: "img/cats/cat02.jpg" },
+  { name: "Shadow", type: "Cat", age: 3, img: "img/cats/cat03.jpg" },
+  { name: "Bubbles", type: "Bird", age: 1, img: "img/dogs/birds/bird01.jpg" },
+  { name: "Tweety", type: "Bird", age: 0.8, img: "img/dogs/birds/bird02.jpg" },
+  { name: "Cappy", type: "Capybara", age: 2.5, img: "img/capybaras/capybara01.jpg" },
+  { name: "Chonky", type: "Capybara", age: 3, img: "img/capybaras/capybara02.jpg" },
+  { name: "Mew", type: "Cat", age: 1, img: "img/cat.webp" },
+  { name: "Pupper", type: "Dog", age: 2, img: "img/dog.jpg" }
+];
+
 
     function adoptPet(name) {
       alert(`Thank you for choosing to adopt ${name}! Our team will contact you soon.`);
