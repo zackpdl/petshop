@@ -33,20 +33,19 @@
                     <img src="img/dog.jpg" alt="Dog">
                     <h3>Maxyyy</h3>
                     <p>Friendly Labrador, 2 years old</p>
-                    <button class="adopt-btn">Adopt Now</button>
+                    <button onclick="adoptPet('Maxyyy')" class="adopt-btn">Adopt Now</button>
                 </div>
                 <div class="pet-card">
                     <img src="img/cat.webp" alt="Cat">
                     <h3>Luna</h3>
                     <p>Playful Persian, 1 year old</p>
-                    <button class="adopt-btn">Adopt Now</button>
+                    <button onclick="adoptPet('Luna')" class="adopt-btn">Adopt Now</button>
                 </div>
-
                 <div class="pet-card">
                     <img src="img/capybaras/capybara01.jpg" alt="Capybara">
                     <h3>Bubbles</h3>
                     <p>Chill Capybara, 5 years old</p>
-                    <button class="adopt-btn">Adopt Now</button>
+                    <button onclick="adoptPet('Bubbles')" class="adopt-btn">Adopt Now</button>
                 </div>
             </div>
         </section>
@@ -64,6 +63,11 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+function adoptPet(name) {
+    alert(`Thank you for choosing to adopt ${name}! Our team will contact you soon.`);
+}
+</script>
+<script src="script.js"></script>
 </body>
 </html>
