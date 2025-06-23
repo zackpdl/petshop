@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VAT Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      max-width: 500px;
+      margin: auto;
+      background: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    section {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input {
+      padding: 8px;
+      width: 100%;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📊 VAT Calculator</h1>
+
+  <!-- Normal VAT Calculation -->
+  <section>
+    <h2>Calculate VAT (Price → Price + VAT)</h2>
+    <label>Base Price (excluding VAT):</label>
+    <input type="number" id="basePrice" placeholder="Enter price without VAT" />
+    
+    <label>VAT Rate (%):</label>
+    <input type="number" id="vatRate" value="20" />
+
+    <div class="result" id="totalPriceWithVAT">Total Price: -</div>
+  </section>
+
+  <!-- Reverse VAT Calculation -->
+  <section>
+    <h2>🔄 Reverse Calculate VAT (Price + VAT → Price)</h2>
+    <label>Total Price (including VAT):</label>
+    <input type="number" id="totalPrice" placeholder="Enter price with VAT" />
+    
+    <label>VAT Rate (%):</label>
+    <input type="number" id="reverseVatRate" value="20" />
+
+    <div class="result" id="extractedBasePrice">Base Price: -</div>
+    <div class="result" id="extractedVAT">Extracted VAT: -</div>
+  </section>
+
+  <script>
+    const baseInput = document.getElementById("basePrice");
+    const vatInput = document.getElementById("vatRate");
+    const totalOutput = document.getElementById("totalPriceWithVAT");
+
+    const totalInput = document.getElementById("totalPrice");
+    const reverseVatInput = document.getElementById("reverseVatRate");
+    const baseOutput = document.getElementById("extractedBasePrice");
+    const vatOutput = document.getElementById("extractedVAT");
+
+    function calculateVAT() {
+      const base = parseFloat(baseInput.value);
+      const vat = parseFloat(vatInput.value);
+      if (!isNaN(base) && !isNaN(vat)) {
+        const total = base + (base * vat / 100);
+        totalOutput.textContent = `Total Price: ${total.toFixed(2)}`;
+      } else {
+        totalOutput.textContent = "Total Price: -";
+      }
+    }
+
+    function reverseCalculateVAT() {
+      const total = parseFloat(totalInput.value);
+      const vat = parseFloat(reverseVatInput.value);
+      if (!isNaN(total) && !isNaN(vat)) {
+        const base = total / (1 + vat / 100);
+        const vatAmount = total - base;
+        baseOutput.textContent = `Base Price: ${base.toFixed(2)}`;
+        vatOutput.textContent = `Extracted VAT: ${vatAmount.toFixed(2)}`;
+      } else {
+        baseOutput.textContent = "Base Price: -";
+        vatOutput.textContent = "Extracted VAT: -";
+      }
+    }
+
+    baseInput.addEventListener("input", calculateVAT);
+    vatInput.addEventListener("input", calculateVAT);
+
+    totalInput.addEventListener("input", reverseCalculateVAT);
+    reverseVatInput.addEventListener("input", reverseCalculateVAT);
+  </script>
+
+</body>
+</html>
